@@ -29,8 +29,9 @@ RUN git -C /easyrsa checkout ${checkout}
 ENV PATH="/easyrsa/${scriptdir}:${PATH}"
 
 # https://github.com/OpenVPN/easy-rsa/blob/v3.0.4/easyrsa3/easyrsa#L1037-L1038
-ENV EASYRSA_PKI="/pki"
-RUN mkdir -pv "${EASYRSA_PKI}"
+# https://github.com/OpenVPN/easy-rsa/issues/178
+RUN mkdir -pv "/pki"
+ENV EASYRSA_PKI="/pki/easyrsa-ca"
 
 ENTRYPOINT ["easyrsa"]
 CMD ["help"]
