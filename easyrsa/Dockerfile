@@ -8,7 +8,7 @@
 FROM alpine:latest
 
 ARG repo="https://github.com/OpenVPN/easy-rsa.git"
-ARG checkout="tags/v3.0.4"
+ARG checkout="tags/v3.0.6"
 
 # directory inside the repository that contains the easyrsa script
 ARG scriptdir="easyrsa3"
