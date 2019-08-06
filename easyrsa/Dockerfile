@@ -24,11 +24,11 @@ RUN git config --global pack.compression 9 \
  && git config --global core.compression 9 \
  && git config --global core.looseCompression 9
 RUN git clone --no-checkout ${repo} /easyrsa
-RUN git -C /easyrsa checkout ${checkout}
+RUN git -C /easyrsa reset --hard ${checkout}
 
 ENV PATH="/easyrsa/${scriptdir}:${PATH}"
 
-# https://github.com/OpenVPN/easy-rsa/blob/v3.0.4/easyrsa3/easyrsa#L1037-L1038
+# https://github.com/OpenVPN/easy-rsa/blob/v3.0.6/easyrsa3/easyrsa#L1456-L1457
 # https://github.com/OpenVPN/easy-rsa/issues/178
 RUN mkdir -pv "/pki"
 ENV EASYRSA_PKI="/pki/easyrsa-ca"
