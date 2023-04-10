@@ -1,0 +1,8 @@
+.git
+.gitmodules
+LICENSE
+README.md
+build.sh
+easyrsa/.git
+easyrsa/.github
+easyrsa/.gitignore
