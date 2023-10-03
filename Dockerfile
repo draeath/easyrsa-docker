@@ -24,5 +24,6 @@ ENV EASYRSA_PKI="/pki/ca"
 RUN mkdir -pv /pki
 ADD easy-rsa /easy-rsa
 
+WORKDIR /easy-rsa
 ENTRYPOINT ["easyrsa"]
 CMD ["help"]
