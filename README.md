@@ -5,4 +5,4 @@ Usage is pretty simple, just run the container (as an entrypoint has been set) w
 
     podman run -it --rm -v ~/.easyrsa:/pki draeath/easyrsa:latest init-pki soft
 
-If you need to use a different easyrsa version, just checkout a different reference in the easyrsa git submodule.
+If you need to use a different easyrsa version, just checkout a different reference in the easy-rsa git submodule.
