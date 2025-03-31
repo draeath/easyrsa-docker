@@ -5,6 +5,11 @@
 # You should take care to restrict access to these files, for what should be
 # obvious reasons. Fail to do so at your own risk.
 
+LABEL org.opencontainers.image.source="https://github.com/draeath/easyrsa-docker.git"
+LABEL org.opencontainers.image.version="3.2.2"
+LABEL org.opencontainers.image.upstream.source="https://github.com/OpenVPN/easy-rsa.git"
+LABEL org.opencontainers.image.upstream.revision="8de63429e6c70e4c573aad291fb0ca3cdba763bd"
+
 FROM registry.access.redhat.com/ubi9/ubi
 RUN dnf makecache &&\
     dnf upgrade -y &&\
@@ -24,6 +29,7 @@ ENV EASYRSA_PKI="/pki/ca"
 RUN mkdir -pv /pki
 ADD easy-rsa /easy-rsa
 
+VOLUME /pki
 WORKDIR /easy-rsa
 ENTRYPOINT ["easyrsa"]
 CMD ["help"]
